@@ -5,6 +5,6 @@
    "type": "array",
    "uniqueItems": true,
    "items": {
-      "$ref": "sample.json"
+      "$ref": "sample_unit.json"
    }
 }

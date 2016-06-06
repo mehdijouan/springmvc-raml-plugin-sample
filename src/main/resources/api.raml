@@ -2,50 +2,50 @@
 
 title: Samp API
 version: v0.1
-baseUri: sample
+baseUri: sample_unit
 mediaType:  application/json
 
 schemas:
-  - Sample: !include schemas/sample.json
-  - Samples: !include schemas/samples.json
+  - sample_unit: !include schemas/sample_unit.json
+  - sample_units: !include schemas/sample_units.json
 
-/samples:
+/sample_units:
   displayName: Samples
   description: A collection of samples
   get:
     description: Retrieves samples
     responses:
       200:
-        description: The sample collection has been successfully retrieved.
+        description: The sample unit collection has been successfully retrieved.
         body:
           application/json:
-            schema: Samples
-            example: !include examples/example-samples.json
+            schema: sample_units
+            example: !include examples/example-sample_units.json
   post:
-    description: Creates a sample
+    description: Creates a sample unit
     body:
       application/json:
-        schema: Sample
-        example: !include examples/example-sample.json
+        schema: sample_unit
+        example: !include examples/example-sample_unit.json
     responses:
       201:
-        description: The sample has been successfully created.
+        description: The sample unit has been successfully created.
   /{id}:
-    displayName: Sample
-    description: A sample referenced by its identifier.
+    displayName: sample unit
+    description: A sample unit referenced by its identifier.
     uriParameters:
       id:
-        displayName: Sample Identifier
-        description: The UUID of a sample
+        displayName: sample unit Identifier
+        description: The UUID of a sample unit
         type: string
     get:
-      description: Retrieves a given sample by its identifier.
+      description: Retrieves a given sample unit by its identifier.
       responses:
         200:
-          description: The sample has been successfully retrieved.
+          description: The sample unit has been successfully retrieved.
           body:
             application/json:
-              schema: Sample
-              example: !include examples/example-sample.json
+              schema: sample_unit
+              example: !include examples/example-sample_unit.json
         404:
-          description: The sample does not exist.
+          description: The sample unit does not exist.

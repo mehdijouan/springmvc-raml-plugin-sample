@@ -1,52 +1,52 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "title": "Sample Schema",
-  "id": "Sample",
+  "id": "Sample Unit",
   "type": "object",
   "description": "The schema of a Sample",
   "properties": {
-    "tString": {
+    "t_string": {
       "type": "string",
       "description": "The type string."
     },
-    "tInteger": {
+    "t_integer": {
       "type": "integer",
       "description": "The type integer."
     },
-    "tNumber": {
+    "t_number": {
       "type": "number",
       "description": "The type number.",
       "minimum": 0
     },
-    "tDate": {
+    "t_date": {
       "type": "date",
       "description": "The type date."
     },
-    "tBoolean": {
+    "t_boolean": {
       "type": "boolean",
       "description": "The type boolean.",
       "default": true
     },
-    "tArrayRef": {
+    "t_array_ref": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/tRef"
+        "$ref": "#/definitions/t_ref"
       },
       "minItems": 1
     }
   },
   "required": [
-    "tInteger",
-    "tArrayRef"
+    "t_integer",
+    "t_array_ref"
   ],
   "definitions": {
-    "tRef": {
+    "t_ref": {
       "$schema": "http://json-schema.org/draft-04/schema#",
       "title": "tRef",
       "type": "object",
       "description": "A definition reference.",
       "properties": {
-        "refId": {
+        "ref_id": {
           "type": "string",
           "description": "The identifier of a reference."
         }
