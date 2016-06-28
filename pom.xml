@@ -48,17 +48,22 @@
 			<plugin>
 				<groupId>com.phoenixnap.oss</groupId>
 				<artifactId>springmvc-raml-plugin</artifactId>
-				<version>0.5.3</version>
+				<version>0.6.1</version>
 				<executions>
+
 					<execution>
-						<id>generate-springmvc-endpoints</id>
-						<phase>generate-resources</phase>
+						<id>generate-springmvc-client</id>
+						<phase>generate-sources</phase>
 						<goals>
 							<goal>generate-springmvc-endpoints</goal>
 						</goals>
 						<configuration>
+							<rule>com.phoenixnap.oss.ramlapisync.generation.rules.Spring4RestTemplateClientRule</rule>
+							<ruleConfiguration>
+								<baseUrlConfigurationPath>service.url</baseUrlConfigurationPath>
+								<restTemplateQualifierBeanName>serviceRestTemplate</restTemplateQualifierBeanName>
+							</ruleConfiguration>
 							<ramlPath>src/main/resources/api.raml</ramlPath>
-							<rule>com.phoenixnap.oss.ramlapisync.generation.rules.Spring4ControllerInterfaceRule</rule>
 							<basePackage>com.test.samples</basePackage>
 							<schemaLocation>src/main/resources/schemas</schemaLocation>
 						</configuration>
