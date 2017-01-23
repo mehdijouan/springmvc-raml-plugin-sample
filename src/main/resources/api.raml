@@ -2,7 +2,7 @@
 
 title: Samp API
 version: v0.1
-baseUri: sample_unit
+baseUri: sample_units
 mediaType:  application/json
 
 schemas:
@@ -12,15 +12,6 @@ schemas:
 /sample_units:
   displayName: Samples
   description: A collection of samples
-  get:
-    description: Retrieves samples
-    responses:
-      200:
-        description: The sample unit collection has been successfully retrieved.
-        body:
-          application/json:
-            schema: sample_units
-            example: !include examples/example-sample_units.json
   post:
     description: Creates a sample unit
     body:
@@ -30,22 +21,12 @@ schemas:
     responses:
       201:
         description: The sample unit has been successfully created.
-  /{id}:
-    displayName: sample unit
-    description: A sample unit referenced by its identifier.
-    uriParameters:
-      id:
-        displayName: sample unit Identifier
-        description: The UUID of a sample unit
-        type: string
-    get:
-      description: Retrieves a given sample unit by its identifier.
-      responses:
-        200:
-          description: The sample unit has been successfully retrieved.
-          body:
-            application/json:
-              schema: sample_unit
-              example: !include examples/example-sample_unit.json
-        404:
-          description: The sample unit does not exist.
+  get:
+    description: Retrieves samples
+    responses:
+      200:
+        description: The sample unit collection has been successfully retrieved.
+        body:
+          application/json:
+            schema: sample_units
+            example: !include examples/example-sample_units.json

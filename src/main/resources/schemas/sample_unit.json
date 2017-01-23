@@ -33,6 +33,9 @@
         "$ref": "#/definitions/t_ref"
       },
       "minItems": 1
+    },
+    "subUnit":{
+      "$ref":"sub_sample_unit.json"
     }
   },
   "required": [

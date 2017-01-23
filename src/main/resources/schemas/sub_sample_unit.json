@@ -1,0 +1,16 @@
+{
+   "$schema": "http://json-schema.org/draft-04/schema#",
+   "title": "Sub Sample Schema",
+   "id": "Sub Sample Unit",
+   "type": "object",
+   "description": "The schema of a Sample",
+   "properties": {
+      "sub_string": {
+         "type": "string",
+         "description": "The type string."
+      }
+   },
+   "required": [
+      "sub_string"
+   ]
+}
